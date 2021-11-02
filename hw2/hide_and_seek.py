@@ -15,7 +15,15 @@ class Hide_and_Seek(QMainWindow, Ui_MainWindow):
         else:
             self.textBrowser_1.show()
 
+sys._excepthook = sys.excepthook
 
+
+def exception_hook(exctype, value, traceback):
+    sys._excepthook(exctype, value, traceback)
+    sys.exit(1)
+
+
+sys.excepthook = exception_hook
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     wnd = Hide_and_Seek()
