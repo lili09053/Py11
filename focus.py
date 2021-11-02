@@ -20,19 +20,8 @@ class Focus(QMainWindow, Ui_MainWindow):
         self.textEdit_left.setText(self.textEdit_right.toPlainText())
         self.textEdit_right.setText(temp)
 
-sys._excepthook = sys.excepthook
-
-
-def exception_hook(exctype, value, traceback):
-    sys._excepthook(exctype, value, traceback)
-    sys.exit(1)
-
-
-sys.excepthook = exception_hook
-
 
 if __name__ == '__main__':
-    sys.excepthook = exception_hook
     app = QApplication(sys.argv)
     wnd = Focus()
     wnd.show()
