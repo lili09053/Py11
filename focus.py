@@ -1,5 +1,4 @@
 import sys
-import pickle
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from untitled import Ui_MainWindow
 
