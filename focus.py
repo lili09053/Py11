@@ -16,6 +16,10 @@ class Focus(QMainWindow, Ui_MainWindow):
             self.pushButton_arrow.setText("<-")
         else:
             self.pushButton_arrow.setText("->")
+        
+        temp = self.textEdit_left.toPlainText()
+        self.textEdit_left.setText(self.textEdit_right.toPlainText())
+        self.textEdit_right.setText(temp)
 
 sys._excepthook = sys.excepthook
 
