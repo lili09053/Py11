@@ -32,10 +32,6 @@ class Arithmometr(QMainWindow, Ui_mainWindow):
         self.textEdit_3.setText(str(a))
         
 
-
-
-
-
 sys._excepthook = sys.excepthook
 
 def exception_hook(exctype, value, traceback):
