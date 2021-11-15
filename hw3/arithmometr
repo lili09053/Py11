@@ -16,6 +16,20 @@ class Arithmometr(QMainWindow, Ui_mainWindow):
         else:
             a = int(self.textEdit_1.toPlainText()) + int(self.textEdit_2.toPlainText())
         self.textEdit_3.setText(str(a))
+    
+    def button_minus(self):
+        if self.textEdit_1.toPlainText() == "" or self.textEdit_2.toPlainText() == "":
+            a = "Ошибка"
+        else:
+            a = int(self.textEdit_1.toPlainText()) - int(self.textEdit_2.toPlainText())
+        self.textEdit_3.setText(str(a))
+
+    def button_multiply(self):
+        if self.textEdit_1.toPlainText() == "" or self.textEdit_2.toPlainText() == "":
+            a = "Ошибка"
+        else:
+            a = int(self.textEdit_1.toPlainText()) * int(self.textEdit_2.toPlainText())
+        self.textEdit_3.setText(str(a))
         
 
 
