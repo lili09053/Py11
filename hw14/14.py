@@ -1,4 +1,4 @@
-import sys, random
+import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtGui import QPainter, QColor, QPen
