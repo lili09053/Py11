@@ -1,0 +1,73 @@
+n = input().split()
+a = int(n[0])
+b = int(n[1])
+c = int(n[2])
+f = False
+d0 = c-a-b
+d1 = a-b-c
+d2 = b-a-c
+if c>a and c>b and c<(a+b):
+    d = (-2*d0)**2-4*(a**2+b**2-c**2)
+    if d > 0:
+        x1 = (2*d0+(d)**(1/2))/2
+        x2 = (2*d0-(d)**(1/2))/2
+        x = 0
+        if x2 > 0 and x1 > 0:
+            x = max(x1, x2)
+        elif (x2 > 0 and x1 < 0 and abs(x2) == abs(x1)):
+            x = x2
+        elif (x1 > 0 and x2 < 0 and abs(x2) == abs(x1)):
+            x = x1
+        elif (x2 > 0 and x1 < 0 and abs(x2) != abs(x1)):
+            x = x2
+        elif (x1 > 0 and x2 < 0 and abs(x2) != abs(x1)):
+            x = x1
+        elif x2 < 0 and x1 < 0:
+            x = max(x1, x2)
+        if x>d0 and x>d1 and x>d2 and (a+b)>(c-x):
+            f = True
+elif b>a and c<b and b < (c+a):
+    d = (-2*d2)**2-4*(a**2+c**2-b**2)
+    if d > 0:
+        x1 = (2*d2+(d)**(1/2))/2
+        x2 = (2*d2-(d)**(1/2))/2
+        x = 0
+        if x2 > 0 and x1 > 0:
+            x = max(x1, x2)
+        elif (x2 > 0 and x1 < 0 and abs(x2) == abs(x1)):
+            x = x2
+        elif (x1 > 0 and x2 < 0 and abs(x2) == abs(x1)):
+            x = x1
+        elif (x2 > 0 and x1 < 0 and abs(x2) != abs(x1)):
+            x = x2
+        elif (x1 > 0 and x2 < 0 and abs(x2) != abs(x1)):
+            x = x1
+        elif x2 < 0 and x1 < 0:
+            x = max(x1, x2)
+        if x>d0 and x>d1 and x>d2 and (a+c)>(b-x):
+            f = True
+elif c<a and a>b and a<(b+c):
+    d = (-2*d1)**2-4*(c**2+b**2-a**2)
+    if d > 0:
+        x1 = (2*d1+sqrt(d))/2
+        x2 = (2*d1-sqrt(d))/2
+        x = 0
+        if x2 > 0 and x1 > 0:
+            x = max(x1, x2)
+        elif (x2 > 0 and x1 < 0 and abs(x2) == abs(x1)):
+            x = x2
+        elif (x1 > 0 and x2 < 0 and abs(x2) == abs(x1)):
+            x = x1
+        elif (x2 > 0 and x1 < 0 and abs(x2) != abs(x1)):
+            x = x2
+        elif (x1 > 0 and x2 < 0 and abs(x2) != abs(x1)):
+            x = x1
+        elif x2 < 0 and x1 < 0:
+            x = max(x1, x2)
+        if x>d0 and x>d1 and x>d2 and (c+b)>(a-x):
+            f = True
+if f:
+    print('Possible')
+    print(int(x))
+else:
+    print('Impossible')
